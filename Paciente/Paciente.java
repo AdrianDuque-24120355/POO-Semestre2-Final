@@ -1,10 +1,7 @@
 package paciente;
 
-import java.util.Random;
-
 public class Paciente {
-    Random random=new Random();
-    public int id;
+    public String id;
     public String nombre;
     public String apellidos;
     public String FechaNacimiento;
@@ -12,8 +9,8 @@ public class Paciente {
     public String tipoSangre;
     public char sexo;
 
-    public Paciente(String nombre, String apellidos, String FechaNacimiento, String telefono, String tipoSangre, char sexo) {
-        this.id = this.random.nextInt(1, 1001);
+    public Paciente(String id, String nombre, String apellidos, String FechaNacimiento, String telefono, String tipoSangre, char sexo) {
+        this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.FechaNacimiento = FechaNacimiento;
@@ -23,12 +20,12 @@ public class Paciente {
     }
     
     public String MostrarDatos(){
-        String datos=String.format("Id: %d, nombre: %s, apellidos: %s, fecha de nacimiento: %s, telefono: %s, tipo de sangre: %s, sexo: %s",
+        String datos=String.format("Id: %s, nombre: %s, apellidos: %s, fecha de nacimiento: %s, telefono: %s, tipo de sangre: %s, sexo: %s",
         id, nombre, apellidos, FechaNacimiento, telefono, tipoSangre, sexo);
         return datos;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -55,6 +52,4 @@ public class Paciente {
     public char getSexo() {
         return sexo;
     }
-    
-    
 }

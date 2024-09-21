@@ -1,27 +1,23 @@
 package consultorio;
 
-import java.util.Random;
-
-
 public class Consultorio {
-    Random random=new Random();
-    public int id;
+    public String id;
     public int piso;
     public int numeroConsultorio;
 
-    public Consultorio(int piso, int numeroConsultorio) {
-        this.id = this.random.nextInt(1, 1001);
+    public Consultorio(String id, int piso, int numeroConsultorio) {
+        this.id = id;
         this.piso = piso;
         this.numeroConsultorio = numeroConsultorio;
     }
     
     public String MostrarDatos(){
-        String datos=String.format("Id: %d, piso: %d, numero de consultorio: %d",
+        String datos=String.format("Id: %s, piso: %d, numero de consultorio: %d",
         id, piso, numeroConsultorio);
         return datos;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -31,7 +27,5 @@ public class Consultorio {
 
     public int getnumeroConsultorio() {
         return numeroConsultorio;
-    }
-    
-    
+    }  
 }
